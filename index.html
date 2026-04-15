@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>EduSport Battle</title>
-    <!-- Font Catchy untuk usia SMP: Outfit (Modern) & Bangers (Komik/Energi) -->
+    <!-- Font Catchy -->
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -31,8 +31,16 @@
 
         /* ================= NAVIGATION & MENUS ================= */
         .top-bar { position: absolute; top: 15px; right: 15px; z-index: 1000; display: flex; gap: 12px; }
-        .icon-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; width: 45px; height: 45px; color: white; cursor: pointer; backdrop-filter: blur(10px); transition: 0.3s; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; text-decoration: none; }
+        .icon-btn { 
+            background: rgba(255,255,255,0.1); 
+            border: 1px solid rgba(255,255,255,0.2); 
+            border-radius: 50%; width: 45px; height: 45px; 
+            color: white; cursor: pointer; backdrop-filter: blur(10px); 
+            transition: 0.3s; display: flex; align-items: center; 
+            justify-content: center; font-size: 1.2rem; text-decoration: none; 
+        }
         .icon-btn:hover { background: rgba(255,255,255,0.2); transform: scale(1.1); }
+        .icon-btn.active { background: var(--primary); border-color: #fff; }
 
         #main-menu {
             position: fixed; inset: 0; z-index: 900;
@@ -46,59 +54,12 @@
             border: 1px solid rgba(255,255,255,0.1); text-align: center; backdrop-filter: blur(20px);
             box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
             animation: fadeIn 0.8s ease-out;
-            max-width: 500px;
-            width: 100%;
-            position: relative;
+            max-width: 500px; width: 100%; position: relative;
         }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* ================= HEADER SECTION (JUDUL + GAMBAR) ================= */
-        .header-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .title-group {
-            text-align: left;
-        }
-
-        .game-title { 
-            font-family: var(--font-title);
-            font-size: 3rem; 
-            line-height: 0.9;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: linear-gradient(135deg, #fff 20%, var(--secondary) 50%, var(--primary) 80%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .title-sub {
-            color: var(--accent);
-            -webkit-text-fill-color: initial;
-        }
-
-        .side-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-            border: 2px solid var(--secondary);
-            flex-shrink: 0;
-        }
-        .side-image img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-        }
-
-        /* ================= CREATOR PHOTO DECORATION ================= */
+        /* ================= DEKORASI FOTO KREATOR ================= */
         .creator-wrapper {
             position: relative;
             width: 100px;
@@ -108,7 +69,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .creator-glow {
             position: absolute;
             inset: -5px;
@@ -118,149 +78,76 @@
             filter: blur(8px);
             opacity: 0.6;
         }
-
-        @keyframes rotateGlow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
+        @keyframes rotateGlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .creator-container {
-            width: 85px;
-            height: 85px;
-            position: relative;
-            padding: 3px;
-            background: #0f172a;
-            border-radius: 50%;
-            z-index: 2;
-            overflow: hidden;
+            width: 85px; height: 85px; position: relative; padding: 3px;
+            background: #0f172a; border-radius: 50%; z-index: 2; overflow: hidden;
+        }
+        .creator-img {
+            width: 100%; height: 100%; border-radius: 50%; display: block;
+            object-fit: cover; border: 2px solid rgba(255,255,255,0.2); background: #1e293b;
         }
 
-        .creator-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            display: block;
-            object-fit: cover;
-            border: 2px solid rgba(255,255,255,0.2);
-            background: #1e293b;
+        /* ================= HEADER SECTION (JUDUL + LOGO) ================= */
+        .header-section { display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px; }
+        .side-image {
+            width: 80px; height: 80px; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4); border: 2px solid var(--secondary); flex-shrink: 0;
         }
+        .side-image img { width: 100%; height: 100%; display: block; object-fit: cover; }
+        .title-group { text-align: left; }
+        .game-title { 
+            font-family: var(--font-title); font-size: 3rem; line-height: 0.9;
+            letter-spacing: 2px; text-transform: uppercase;
+            background: linear-gradient(135deg, #fff 20%, var(--secondary) 50%, var(--primary) 80%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .title-sub { color: var(--accent); -webkit-text-fill-color: initial; }
 
         /* ================= TOMBOL & SELEKTOR ================= */
         .btn-group { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; width: 100%; }
         .menu-btn { 
             padding: 12px; border: none; border-radius: 16px; font-weight: 800; cursor: pointer; 
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-size: 0.95rem;
-            text-transform: uppercase;
+            transition: all 0.3s; font-size: 0.95rem; text-transform: uppercase;
         }
         .btn-primary { background: #fff; color: #000; }
-        
         .mode-selector { display: flex; background: rgba(0,0,0,0.4); border-radius: 14px; padding: 5px; margin-bottom: 10px; }
         .mode-opt { flex: 1; padding: 8px; border-radius: 10px; cursor: pointer; font-size: 0.75rem; font-weight: 900; color: #94a3b8; }
         .mode-opt.active { background: #fff; color: #000; }
 
+        /* ================= FOOTER ================= */
         .footer-credits {
-            margin-top: 15px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.7rem;
-            color: #94a3b8;
+            margin-top: 15px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.7rem; color: #94a3b8;
         }
         .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 8px;
-            color: white;
-            text-decoration: none;
-            padding: 6px 15px;
-            background: #FF0000;
-            border-radius: 10px;
-            font-size: 0.75rem;
-            font-weight: 800;
+            display: inline-flex; align-items: center; gap: 6px; margin-top: 8px;
+            color: white; text-decoration: none; padding: 6px 15px;
+            background: #FF0000; border-radius: 10px; font-size: 0.75rem; font-weight: 800;
         }
 
-        /* ================= GAMEPLAY LAYOUT ================= */
-        #game-container { 
-            position: fixed; 
-            inset: 0; 
-            display: none; 
-            width: 100%;
-            height: 100%;
-        }
-
-        @media (orientation: portrait) {
-            .mode-duel { grid-template-rows: 1fr 1fr; grid-template-columns: 1fr; }
-            .mode-squad { grid-template-rows: repeat(4, 1fr); grid-template-columns: 1fr; }
-            .player-area { border-bottom: 1px solid rgba(255,255,255,0.1); }
-        }
-
-        @media (orientation: landscape) {
-            .mode-duel { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
-            .mode-squad { grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr; }
-            .player-area { border-right: 1px solid rgba(255,255,255,0.1); }
-        }
-
-        .player-area { 
-            position: relative; 
-            display: flex; 
-            flex-direction: column; 
-            overflow: hidden; 
-            background: #020617;
-        }
-
+        /* ================= GAMEPLAY ================= */
+        #game-container { position: fixed; inset: 0; display: none; width: 100%; height: 100%; }
+        .player-area { position: relative; display: flex; flex-direction: column; overflow: hidden; background: #020617; border: 1px solid rgba(255,255,255,0.05); }
         .hud { padding: 10px; display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 900; }
         .timer-track { height: 4px; background: rgba(255,255,255,0.1); width: 100%; }
         .timer-fill { height: 100%; background: #fff; width: 100%; }
-
-        .game-content { 
-            flex: 1; 
-            display: flex; 
-            flex-direction: column; 
-            padding: 10px; 
-            justify-content: space-between;
-        }
-
+        .game-content { flex: 1; display: flex; flex-direction: column; padding: 10px; justify-content: space-between; }
         .playground { flex: 1; display: flex; align-items: center; justify-content: center; }
         .ball { font-size: clamp(2rem, 10vh, 5rem); transition: 0.3s; }
-
-        .question-card { 
-            background: rgba(255,255,255,0.07); 
-            border-radius: 16px; 
-            padding: 12px; 
-            backdrop-filter: blur(10px);
-            max-height: 60%;
-            overflow-y: auto;
-        }
-        
-        .q-text { font-size: clamp(0.9rem, 2.5vh, 1.2rem); font-weight: 800; text-align: center; margin-bottom: 10px; line-height: 1.2; }
+        .question-card { background: rgba(255,255,255,0.07); border-radius: 16px; padding: 12px; backdrop-filter: blur(10px); }
+        .q-text { font-size: clamp(0.9rem, 2.5vh, 1.2rem); font-weight: 800; text-align: center; margin-bottom: 10px; }
         .options-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+        .option-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 12px; color: white; cursor: pointer; }
 
-        @media (min-aspect-ratio: 16/9) { .options-grid { grid-template-columns: 1fr 1fr; } }
-        
-        .option-btn { 
-            background: rgba(255,255,255,0.05); 
-            border: 1px solid rgba(255,255,255,0.1); 
-            padding: 10px; 
-            border-radius: 12px; 
-            color: white; 
-            font-weight: 700; 
-            cursor: pointer;
-            font-size: 0.85rem;
-        }
-
-        .game-over { 
-            position: absolute; inset: 0; background: rgba(0,0,0,0.95); 
-            display: none; flex-direction: column; align-items: center; 
-            justify-content: center; z-index: 100; text-align: center;
-        }
-        .game-over.active { display: flex; }
-        .go-btn { margin-top: 20px; padding: 12px 25px; background: #fff; color: #000; border-radius: 12px; border: none; font-weight: 900; cursor: pointer; }
+        #game-container.mode-duel { grid-template-columns: 1fr 1fr; }
+        #game-container.mode-squad { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
 
         @media (max-width: 600px) {
+            #game-container.mode-duel { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+            #game-container.mode-squad { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
             .game-title { font-size: 2.2rem; }
-            .header-section { gap: 10px; }
             .side-image { width: 60px; height: 60px; }
-            .menu-card { padding: 20px 15px; }
         }
     </style>
 </head>
@@ -268,18 +155,22 @@
 
     <div class="top-bar">
         <button class="icon-btn" onclick="location.reload()">🏠</button>
+        <button id="fullscreen-btn" class="icon-btn">⛶</button>
+        <button id="bgm-toggle" class="icon-btn">🎵</button>
         <button id="audio-toggle" class="icon-btn">🔈</button>
     </div>
 
     <div id="main-menu">
         <div class="menu-card">
+            <!-- Balikkan Foto Kreator -->
             <div class="creator-wrapper">
                 <div class="creator-glow"></div>
                 <div class="creator-container">
                     <img src="https://i.imgur.com/TKnsYjX.png" alt="Arief Hidayat S.Pd" class="creator-img" onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Arief'">
                 </div>
             </div>
-            
+
+            <!-- Balikkan Header dengan Logo -->
             <div class="header-section">
                 <div class="side-image">
                     <img src="https://i.imgur.com/CMSJ8wk.png" alt="Logo EduSport" onerror="this.style.display='none'">
@@ -300,6 +191,7 @@
                 <button class="menu-btn" style="background:var(--p4); color:white" onclick="initGame(4)">👑 Squad 4P</button>
             </div>
 
+            <!-- Balikkan Kredit Footer -->
             <div class="footer-credits">
                 Karya: <strong>Arief Hidayat S.Pd</strong><br>
                 <a href="https://www.youtube.com/@fakhrifarhan" target="_blank" class="social-link">
@@ -313,38 +205,137 @@
     <div id="game-container"></div>
 
     <script>
-        const SPORTS_THEMES = {
-            FOOTBALL: { icon: '⚽' },
-            BASKET: { icon: '🏀' },
-            VOLLEY: { icon: '🏐' },
-            BADMINTON: { icon: '🏸' },
-            ATHLETIC: { icon: '🏃' },
-            SWIM: { icon: '🏊' }
-        };
+        // Logika Fullscreen
+        const fsBtn = document.getElementById('fullscreen-btn');
+        fsBtn.addEventListener('click', () => {
+            const doc = window.document;
+            const docEl = doc.documentElement;
+            const requestFS = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+            const exitFS = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
 
+            if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+                if (requestFS) requestFS.call(docEl);
+            } else {
+                if (exitFS) exitFS.call(doc);
+            }
+        });
+
+        document.addEventListener('fullscreenchange', updateFsIcon);
+        document.addEventListener('webkitfullscreenchange', updateFsIcon);
+        document.addEventListener('mozfullscreenchange', updateFsIcon);
+        document.addEventListener('MSFullscreenChange', updateFsIcon);
+
+        function updateFsIcon() {
+            const isFs = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+            fsBtn.textContent = isFs ? '❐' : '⛶';
+        }
+
+        // Game Logic
         const questionBank = [
-            { q: "Durasi waktu istirahat antar babak sepak bola?", options: ["10 Menit", "15 Menit", "20 Menit", "5 Menit"], answer: 1, theme: 'FOOTBALL' },
-            { q: "Tinggi ring basket dari lantai?", options: ["2.50 Meter", "3.05 Meter", "3.50 Meter", "2.75 Meter"], answer: 1, theme: 'BASKET' },
-            { q: "Teknik memukul shuttlecock tipis di depan net?", options: ["Smash", "Dropshot", "Netting", "Lob"], answer: 2, theme: 'BADMINTON' },
-            { q: "Jumlah pemain voli dalam satu lapangan?", options: ["5 Orang", "6 Orang", "11 Orang", "4 Orang"], answer: 1, theme: 'VOLLEY' },
-            { q: "Start yang digunakan pelari jarak menengah?", options: ["Jongkok", "Berdiri", "Melayang", "Duduk"], answer: 1, theme: 'ATHLETIC' },
-            { q: "Gaya renang dengan posisi wajah menghadap langit?", options: ["Gaya Bebas", "Gaya Punggung", "Gaya Dada", "Gaya Batu"], answer: 1, theme: 'SWIM' },
-            { q: "Pelanggaran handsball terjadi jika bola terkena?", options: ["Kepala", "Tangan", "Dada", "Paha"], answer: 1, theme: 'FOOTBALL' },
-            { q: "Istilah memasukkan bola sambil melompat di basket?", options: ["Lay up", "Dribble", "Pivot", "Passing"], answer: 0, theme: 'BASKET' },
-            { q: "Pemain voli yang bebas keluar masuk (bertahan)?", options: ["Setter", "Spiker", "Libero", "Server"], answer: 2, theme: 'VOLLEY' },
-            { q: "Lari estafet 4x100 meter membutuhkan pemain?", options: ["2 Orang", "4 Orang", "1 Orang", "6 Orang"], answer: 1, theme: 'ATHLETIC' },
-            { q: "Berapa jumlah wasit dalam pertandingan sepak bola profesional?", options: ["2 Orang", "4 Orang", "3 Orang", "1 Orang"], answer: 1, theme: 'FOOTBALL' },
-            { q: "Berapa menit waktu bersih satu kuarter dalam basket FIBA?", options: ["10 Menit", "12 Menit", "8 Menit", "15 Menit"], answer: 0, theme: 'BASKET' },
-            { q: "Service dalam voli dilakukan dari area?", options: ["Depan Net", "Belakang Garis Akhir", "Samping", "Tengah"], answer: 1, theme: 'VOLLEY' },
-            { q: "Pukulan keras menukik dalam bulu tangkis disebut?", options: ["Lifting", "Drive", "Smash", "Clear"], answer: 2, theme: 'BADMINTON' },
-            { q: "Nomor lari jarak pendek meliputi?", options: ["100, 200, 400m", "800, 1500m", "5000, 10000m", "Maraton"], answer: 0, theme: 'ATHLETIC' },
-            { q: "Pemain yang bertugas mengatur serangan dalam voli?", options: ["Tosser", "Libero", "Blocker", "Server"], answer: 0, theme: 'VOLLEY' },
-            { q: "Gaya dada dalam renang sering disebut gaya?", options: ["Katak", "Lumba-lumba", "Kupu-kupu", "Anjing"], answer: 0, theme: 'SWIM' },
-            { q: "Berapa poin kemenangan dalam satu set bulu tangkis?", options: ["21 Poin", "25 Poin", "15 Poin", "11 Poin"], answer: 0, theme: 'BADMINTON' },
-            { q: "Sudut lemparan dalam tolak peluru adalah?", options: ["45 Derajat", "40 Derajat", "30 Derajat", "90 Derajat"], answer: 1, theme: 'ATHLETIC' }
+            { q: "Durasi waktu istirahat antar babak sepak bola?", options: ["10 Menit", "15 Menit", "20 Menit", "5 Menit"], answer: 1, theme: '⚽' },
+            { q: "Tinggi ring basket dari lantai?", options: ["2.50 Meter", "3.05 Meter", "3.50 Meter", "2.75 Meter"], answer: 1, theme: '🏀' },
+            { q: "Teknik memukul shuttlecock tipis di depan net?", options: ["Smash", "Dropshot", "Netting", "Lob"], answer: 2, theme: '🏸' },
+            { q: "Jumlah pemain voli dalam satu lapangan?", options: ["5 Orang", "6 Orang", "11 Orang", "4 Orang"], answer: 1, theme: '🏐' },
+            { q: "Induk organisasi sepak bola dunia adalah?", options: ["FIFA", "FIBA", "BWF", "FIVB"], answer: 0, theme: '⚽' },
+            { q: "Induk organisasi sepak bola di Indonesia?", options: ["PBSI", "PERBASI", "PSSI", "PBVSI"], answer: 2, theme: '⚽' },
+            { q: "Jumlah pemain dalam satu tim sepak bola di lapangan?", options: ["11 Orang", "10 Orang", "12 Orang", "9 Orang"], answer: 0, theme: '⚽' },
+            { q: "Waktu normal pertandingan sepak bola adalah?", options: ["2 x 40 menit", "2 x 45 menit", "2 x 50 menit", "2 x 35 menit"], answer: 1, theme: '⚽' },
+            { q: "Pelanggaran bola mengenai tangan dalam sepak bola disebut?", options: ["Offside", "Corner", "Handball", "Foul"], answer: 2, theme: '⚽' },
+            { q: "Tendangan sudut dalam sepak bola disebut juga?", options: ["Corner kick", "Free kick", "Penalty", "Throw in"], answer: 0, theme: '⚽' },
+            { q: "Tendangan penalti diberikan jika terjadi pelanggaran di daerah?", options: ["Tengah lapangan", "Kotak penalti", "Luar garis", "Garis gawang"], answer: 1, theme: '⚽' },
+            { q: "Hukuman kartu merah bagi pemain sepak bola berarti?", options: ["Peringatan", "Denda", "Kartu kuning kedua", "Dikeluarkan dari lapangan"], answer: 3, theme: '⚽' },
+            { q: "Pemain yang bertugas khusus menjaga gawang disebut?", options: ["Kiper", "Striker", "Bek", "Gelandang"], answer: 0, theme: '⚽' },
+            { q: "Negara peraih gelar juara Piala Dunia terbanyak saat ini?", options: ["Brasil", "Jerman", "Italia", "Argentina"], answer: 0, theme: '⚽' },
+            { q: "Pencetak gol terbanyak sepanjang masa di Piala Dunia pria?", options: ["Pele", "Miroslav Klose", "Ronaldo", "Messi"], answer: 1, theme: '⚽' },
+            { q: "Induk organisasi bola basket dunia adalah?", options: ["FIBA", "FIFA", "BWF", "ITF"], answer: 0, theme: '🏀' },
+            { q: "Induk organisasi bola basket Indonesia?", options: ["PSSI", "PBVSI", "PERBASI", "PBSI"], answer: 2, theme: '🏀' },
+            { q: "Siapa penemu olahraga bola basket?", options: ["James Naismith", "William G. Morgan", "Abner Doubleday", "Ebenezer Morley"], answer: 0, theme: '🏀' },
+            { q: "Nilai dari tembakan di luar garis three-point basket adalah?", options: ["1 Angka", "2 Angka", "3 Angka", "4 Angka"], answer: 2, theme: '🏀' },
+            { q: "Membawa bola basket sambil memantulkannya ke lantai disebut?", options: ["Passing", "Dribbling", "Shooting", "Pivot"], answer: 1, theme: '🏀' },
+            { q: "Teknik mengoper bola basket setinggi dada disebut?", options: ["Chest pass", "Bounce pass", "Overhead pass", "Baseball pass"], answer: 0, theme: '🏀' },
+            { q: "Tembakan sambil melompat dalam bola basket disebut?", options: ["Lay-up", "Jump shoot", "Slam dunk", "Free throw"], answer: 1, theme: '🏀' },
+            { q: "Pelanggaran melangkah lebih dari dua langkah tanpa dribble?", options: ["Foul", "Back ball", "Double", "Traveling"], answer: 3, theme: '🏀' },
+            { q: "Durasi waktu untuk satu quarter dalam basket (FIBA) adalah?", options: ["10 Menit", "12 Menit", "15 Menit", "20 Menit"], answer: 0, theme: '🏀' },
+            { q: "Tembakan bebas (Free throw) dalam basket bernilai?", options: ["1 Angka", "2 Angka", "3 Angka", "Tidak ada"], answer: 0, theme: '🏀' },
+            { q: "Induk organisasi bulu tangkis dunia adalah?", options: ["ITF", "FIFA", "BWF", "FIVB"], answer: 2, theme: '🏸' },
+            { q: "Induk organisasi bulu tangkis di Indonesia?", options: ["PSSI", "PBSI", "PERBASI", "PBVSI"], answer: 1, theme: '🏸' },
+            { q: "Pukulan keras menukik tajam ke area lawan di bulu tangkis?", options: ["Smash", "Lob", "Dropshot", "Drive"], answer: 0, theme: '🏸' },
+            { q: "Pukulan melambung tinggi ke garis belakang lawan disebut?", options: ["Smash", "Netting", "Drive", "Lob"], answer: 3, theme: '🏸' },
+            { q: "Kejuaraan beregu putra bulu tangkis dunia disebut?", options: ["Thomas Cup", "Uber Cup", "Sudirman Cup", "All England"], answer: 0, theme: '🏸' },
+            { q: "Kejuaraan beregu putri bulu tangkis dunia disebut?", options: ["Thomas Cup", "Uber Cup", "Sudirman Cup", "World Championship"], answer: 1, theme: '🏸' },
+            { q: "Berapa poin untuk memenangkan satu set di bulu tangkis?", options: ["15 Poin", "25 Poin", "21 Poin", "11 Poin"], answer: 2, theme: '🏸' },
+            { q: "Jika skor 20-20 di bulu tangkis, istilahnya adalah?", options: ["Deuce", "Match point", "Game point", "Tie break"], answer: 0, theme: '🏸' },
+            { q: "Permainan ganda campuran (Mixed doubles) terdiri dari?", options: ["2 Putra", "1 Putra & 1 Putri", "2 Putri", "Bebas"], answer: 1, theme: '🏸' },
+            { q: "Induk organisasi bola voli dunia adalah?", options: ["FIFA", "FIBA", "FIVB", "ITF"], answer: 2, theme: '🏐' },
+            { q: "Induk bola voli di Indonesia adalah?", options: ["PBVSI", "PSSI", "PERBASI", "PBSI"], answer: 0, theme: '🏐' },
+            { q: "Pemain yang bertugas sebagai pengumpan di bola voli disebut?", options: ["Spiker", "Tosser/Setter", "Libero", "Blocker"], answer: 1, theme: '🏐' },
+            { q: "Pemain bertahan khusus di voli (biasanya beda warna baju)?", options: ["Tosser", "Smasher", "Libero", "Server"], answer: 2, theme: '🏐' },
+            { q: "Pukulan pertama untuk memulai reli voli disebut?", options: ["Servis", "Smash", "Passing", "Blocking"], answer: 0, theme: '🏐' },
+            { q: "Membendung serangan (smash) lawan di atas net disebut?", options: ["Passing", "Blocking", "Servis", "Digging"], answer: 1, theme: '🏐' },
+            { q: "Poin untuk memenangkan satu set normal bola voli adalah?", options: ["15 Poin", "21 Poin", "25 Poin", "30 Poin"], answer: 2, theme: '🏐' },
+            { q: "Maksimal sentuhan bola oleh satu tim voli sebelum diseberangkan?", options: ["1 Kali", "2 Kali", "3 Kali", "4 Kali"], answer: 2, theme: '🏐' },
+            { q: "Gaya renang yang paling lambat secara umum adalah?", options: ["Gaya Dada", "Gaya Bebas", "Gaya Punggung", "Gaya Kupu-kupu"], answer: 0, theme: '🏊' },
+            { q: "Induk organisasi renang dunia adalah?", options: ["FINA / World Aquatics", "FIFA", "BWF", "IAAF"], answer: 0, theme: '🏊' },
+            { q: "Induk organisasi renang di Indonesia?", options: ["PSSI", "PRSI", "PASI", "PBSI"], answer: 1, theme: '🏊' },
+            { q: "Gaya renang bebas (Freestyle) disebut juga?", options: ["Gaya Katak", "Gaya Crawl", "Gaya Lumba-lumba", "Gaya Punggung"], answer: 1, theme: '🏊' },
+            { q: "Gaya renang dengan posisi wajah menghadap ke atas air?", options: ["Gaya Bebas", "Gaya Dada", "Gaya Punggung", "Gaya Kupu-kupu"], answer: 2, theme: '🏊' },
+            { q: "Gaya renang yang gerakannya menyerupai lumba-lumba?", options: ["Gaya Bebas", "Gaya Dada", "Gaya Punggung", "Gaya Kupu-kupu"], answer: 3, theme: '🏊' },
+            { q: "Nomor lari jarak pendek (Sprint) meliputi jarak?", options: ["100m, 200m, 400m", "800m, 1500m", "5000m, 10000m", "Maraton"], answer: 0, theme: '🏃' },
+            { q: "Induk organisasi atletik dunia adalah?", options: ["FIFA", "World Athletics/IAAF", "BWF", "FINA"], answer: 1, theme: '🏃' },
+            { q: "Induk olahraga atletik di Indonesia?", options: ["PSSI", "PRSI", "PASI", "PELTI"], answer: 2, theme: '🏃' },
+            { q: "Jenis start yang digunakan untuk lari jarak pendek adalah?", options: ["Start Jongkok", "Start Berdiri", "Start Melayang", "Start Berlari"], answer: 0, theme: '🏃' },
+            { q: "Dalam lari estafet, satu tim terdiri dari berapa pelari?", options: ["2 Orang", "4 Orang", "6 Orang", "8 Orang"], answer: 1, theme: '🏃' },
+            { q: "Alat yang dibawa dan dioperkan dalam lari estafet disebut?", options: ["Baton/Tongkat", "Bendera", "Bola", "Cincin"], answer: 0, theme: '🏃' },
+            { q: "Tolak peluru, lempar cakram, dan lempar lembing termasuk cabang?", options: ["Senam", "Bela Diri", "Atletik", "Permainan"], answer: 2, theme: '🏃' },
+            { q: "Induk organisasi tenis meja dunia adalah?", options: ["BWF", "ITTF", "ITF", "FIFA"], answer: 1, theme: '🏓' },
+            { q: "Induk tenis meja di Indonesia adalah?", options: ["PTMSI", "PELTI", "PBSI", "PBVSI"], answer: 0, theme: '🏓' },
+            { q: "Pukulan dengan telapak tangan menghadap arah pukulan disebut?", options: ["Forehand", "Backhand", "Smash", "Lob"], answer: 0, theme: '🏓' },
+            { q: "Pukulan dengan punggung tangan menghadap arah pukulan disebut?", options: ["Forehand", "Backhand", "Dropshot", "Servis"], answer: 1, theme: '🏓' },
+            { q: "Jumlah poin kemenangan per set tenis meja modern adalah?", options: ["21 Poin", "15 Poin", "11 Poin", "25 Poin"], answer: 2, theme: '🏓' },
+            { q: "Induk organisasi tenis lapangan dunia adalah?", options: ["ITTF", "ITF", "BWF", "FIFA"], answer: 1, theme: '🎾' },
+            { q: "Induk tenis lapangan di Indonesia adalah?", options: ["PTMSI", "PASI", "PELTI", "PBSI"], answer: 2, theme: '🎾' },
+            { q: "Turnamen Grand Slam tenis tertua yang dimainkan di rumput?", options: ["Wimbledon", "US Open", "French Open", "Australian Open"], answer: 0, theme: '🎾' },
+            { q: "Jika poin tenis lapangan mencapai 40-40, kondisi ini disebut?", options: ["Tie-break", "Deuce", "Match point", "Love all"], answer: 1, theme: '🎾' },
+            { q: "Pukulan servis yang gagal masuk ke area lawan disebut?", options: ["Ace", "Let", "Deuce", "Fault"], answer: 3, theme: '🎾' },
+            { q: "Induk olahraga senam dunia adalah?", options: ["FIFA", "FIG", "FIVB", "BWF"], answer: 1, theme: '🤸' },
+            { q: "Induk olahraga senam di Indonesia adalah?", options: ["PERSANI", "PASI", "PRSI", "PELTI"], answer: 0, theme: '🤸' },
+            { q: "Alas yang biasa digunakan untuk pertandingan senam lantai?", options: ["Karpet biasa", "Matras", "Lantai kayu", "Rumput sintetis"], answer: 1, theme: '🤸' },
+            { q: "Gerakan mengguling ke depan dalam senam disebut?", options: ["Back roll", "Roll depan", "Handstand", "Kayang"], answer: 1, theme: '🤸' },
+            { q: "Sikap berdiri dengan kedua tangan di bawah sebagai tumpuan?", options: ["Handstand", "Headstand", "Kayang", "Sikap lilin"], answer: 0, theme: '🤸' },
+            { q: "Induk organisasi catur dunia adalah?", options: ["FIFA", "FIBA", "FIDE", "BWF"], answer: 2, theme: '♟️' },
+            { q: "Induk olahraga catur di Indonesia adalah?", options: ["PERCASI", "PSSI", "PASI", "PELTI"], answer: 0, theme: '♟️' },
+            { q: "Buah catur yang hanya bisa bergerak diagonal (miring)?", options: ["Kuda", "Menteri/Ratu", "Gajah/Peluncur", "Benteng"], answer: 2, theme: '♟️' },
+            { q: "Buah catur yang bergerak dalam pola huruf 'L' adalah?", options: ["Kuda", "Benteng", "Gajah", "Pion/Bidak"], answer: 0, theme: '♟️' },
+            { q: "Langkah khusus pertukaran posisi Raja dan Benteng disebut?", options: ["Skak mat", "Rokade", "Promosi", "En passant"], answer: 1, theme: '♟️' },
+            { q: "Induk organisasi pencak silat di Indonesia?", options: ["IPSI", "FORKI", "TI", "PBJI"], answer: 0, theme: '🥋' },
+            { q: "Induk olahraga tinju amatir dunia adalah?", options: ["WBA", "IBA (AIBA)", "WBC", "IBF"], answer: 1, theme: '🥊' },
+            { q: "Pukulan lurus ke depan yang cepat dalam tinju disebut?", options: ["Jab", "Hook", "Uppercut", "Cross"], answer: 0, theme: '🥊' },
+            { q: "Pukulan melingkar dari arah samping dalam tinju?", options: ["Jab", "Straight", "Hook", "Uppercut"], answer: 2, theme: '🥊' },
+            { q: "Pukulan dari bawah ke atas mengarah ke dagu di tinju?", options: ["Jab", "Uppercut", "Hook", "Straight"], answer: 1, theme: '🥊' },
+            { q: "Induk organisasi panahan di Indonesia adalah?", options: ["PERPANI", "PABSI", "PASI", "PRSI"], answer: 0, theme: '🏹' },
+            { q: "Cabang olahraga angkat besi disebut juga?", options: ["Powerlifting", "Weightlifting", "Bodybuilding", "Crossfit"], answer: 1, theme: '🏋️' },
+            { q: "Induk angkat besi di Indonesia adalah?", options: ["PASI", "PABSI", "PRSI", "PELTI"], answer: 1, theme: '🏋️' },
+            { q: "Dua jenis gaya angkatan utama dalam angkat besi?", options: ["Snatch & Clean/Jerk", "Deadlift & Squat", "Bench press & Pull up", "Curl & Extension"], answer: 0, theme: '🏋️' },
+            { q: "Jarak lari maraton penuh resmi adalah?", options: ["10 km", "21.097 km", "42.195 km", "50 km"], answer: 2, theme: '🏃' },
+            { q: "Gaya lompat tinggi di mana atlet membelakangi mistar disebut?", options: ["Straddle", "Gaya Gunting", "Fosbury Flop", "Gaya Guling"], answer: 2, theme: '🏃' },
+            { q: "Olimpiade kuno pertama kali diselenggarakan di negara?", options: ["Italia", "Yunani", "Mesir", "Inggris"], answer: 1, theme: '🏆' },
+            { q: "Berapa jumlah cincin/ring pada logo Olimpiade?", options: ["3 Cincin", "4 Cincin", "5 Cincin", "6 Cincin"], answer: 2, theme: '🏆' },
+            { q: "Slogan Olimpiade 'Citius, Altius, Fortius' berarti?", options: ["Maju, Kuat, Berani", "Cepat, Tinggi, Kuat", "Satu, Bersama, Menang", "Bermain, Berjuang, Berhasil"], answer: 1, theme: '🏆' },
+            { q: "Medali tertinggi untuk juara pertama di Olimpiade?", options: ["Perak", "Perunggu", "Emas", "Platinum"], answer: 2, theme: '🏆' },
+            { q: "Olahraga yang menyapu lantai es untuk mengarahkan batu granit?", options: ["Ice Skating", "Ice Hockey", "Curling", "Skiing"], answer: 2, theme: '🥌' },
+            { q: "Cabang olahraga balap sepeda di lintasan velodrome disebut?", options: ["BMX", "Mountain Bike", "Road Bike", "Track Cycling"], answer: 3, theme: '🚴' },
+            { q: "Negara tuan rumah penyelenggara Olimpiade Musim Panas 2024?", options: ["Inggris", "Jepang", "Prancis", "Amerika Serikat"], answer: 2, theme: '🏆' },
+            { q: "Olimpiade Musim Panas 2020 (diadakan tahun 2021) berlokasi di?", options: ["Beijing", "Tokyo", "London", "Rio de Janeiro"], answer: 1, theme: '🏆' },
+            { q: "Tembakan masuk ke lubang dengan 1 kali pukulan di golf?", options: ["Birdie", "Eagle", "Bogey", "Hole in one"], answer: 3, theme: '⛳' },
+            { q: "Induk organisasi golf di Indonesia adalah?", options: ["PGI", "PSSI", "PASI", "PELTI"], answer: 0, theme: '⛳' },
+            { q: "Tongkat yang digunakan untuk memukul bola dalam permainan golf?", options: ["Bet", "Raket", "Stick (Klub)", "Tongkat estafet"], answer: 2, theme: '⛳' },
+            { q: "Induk olahraga menembak di Indonesia adalah?", options: ["PERBAKIN", "PERPANI", "PABSI", "IPSI"], answer: 0, theme: '🎯' },
+            { q: "Senjata yang digunakan dalam olahraga anggar?", options: ["Pedang panjang", "Foil, Epee, Sabre", "Tombak", "Keris"], answer: 1, theme: '🤺' },
+            { q: "Lama waktu permainan satu babak futsal yang normal (bersih)?", options: ["15 Menit", "20 Menit", "25 Menit", "30 Menit"], answer: 1, theme: '⚽' },
+            { q: "Berapa jumlah pemain satu tim futsal di lapangan?", options: ["5 Orang", "6 Orang", "7 Orang", "11 Orang"], answer: 0, theme: '⚽' }
         ];
 
-        let selectedRuleMode = 'score'; 
+        let selectedRuleMode = 'score';
         let audioEnabled = false;
 
         function setRules(mode) {
@@ -356,12 +347,12 @@
         const SFX = {
             ctx: null,
             init() { if(!this.ctx) this.ctx = new (window.AudioContext || window.webkitAudioContext)(); },
-            play(f, t, d, v=0.1) {
+            play(f, t, d) {
                 if(!audioEnabled || !this.ctx) return;
                 const o = this.ctx.createOscillator();
                 const g = this.ctx.createGain();
                 o.type = t; o.frequency.setValueAtTime(f, this.ctx.currentTime);
-                g.gain.setValueAtTime(v, this.ctx.currentTime);
+                g.gain.setValueAtTime(0.1, this.ctx.currentTime);
                 g.gain.exponentialRampToValueAtTime(0.01, this.ctx.currentTime + d);
                 o.connect(g); g.connect(this.ctx.destination);
                 o.start(); o.stop(this.ctx.currentTime + d);
@@ -378,24 +369,11 @@
             constructor(id, container) {
                 this.id = id;
                 this.score = 0;
-                this.isAlive = true;
-                this.questionsAttempted = 0;
-                this.maxQuestions = 15;
-                this.qIndex = 0;
-                this.timeLeft = 10;
                 this.timer = null;
-                // Ambil 15 soal acak yang tidak berulang dari bank soal
-                this.questions = [...questionBank]
-                    .sort(() => Math.random() - 0.5)
-                    .slice(0, this.maxQuestions);
-
                 this.el = document.createElement('div');
-                this.el.className = `player-area`;
+                this.el.className = 'player-area';
                 this.el.innerHTML = `
-                    <div class="hud">
-                        <span>P${id} | Soal: <span class="q-count">0</span>/${this.maxQuestions}</span> 
-                        <span class="score-val">0</span>
-                    </div>
+                    <div class="hud"><span>P${id}</span> <span class="score-val">0</span></div>
                     <div class="timer-track"><div class="timer-fill"></div></div>
                     <div class="game-content">
                         <div class="playground"><div class="ball">⚽</div></div>
@@ -406,116 +384,56 @@
                             </div>
                         </div>
                     </div>
-                    <div class="game-over">
-                        <h2 style="color:var(--accent); font-family:var(--font-title); font-size:2rem;">SELESAI!</h2>
-                        <h1 style="font-size:3rem">SKOR: <span class="go-score">0</span></h1>
-                        <button class="go-btn" onclick="location.reload()">MAIN LAGI</button>
-                    </div>
                 `;
                 container.appendChild(this.el);
-
-                this.scoreDisplay = this.el.querySelector('.score-val');
-                this.qCountDisplay = this.el.querySelector('.q-count');
-                this.timerFill = this.el.querySelector('.timer-fill');
-                this.qText = this.el.querySelector('.q-text');
-                this.ball = this.el.querySelector('.ball');
                 this.btns = this.el.querySelectorAll('.option-btn');
-                this.gameOverScreen = this.el.querySelector('.game-over');
-                this.goScoreDisplay = this.el.querySelector('.go-score');
-
                 this.btns.forEach(b => b.onclick = () => this.checkAnswer(b));
                 this.nextQuestion();
             }
 
             nextQuestion() {
-                if(!this.isAlive) return;
-
-                // Batasan 15 soal untuk Mode Score
-                if (selectedRuleMode === 'score' && this.questionsAttempted >= this.maxQuestions) {
-                    this.endGame();
-                    return;
-                }
-
-                // Jika soal habis sebelum batas (misal bank soal < 15), ulang dari bank soal acak lagi
-                if (this.qIndex >= this.questions.length) {
-                    this.questions = [...questionBank].sort(() => Math.random() - 0.5);
-                    this.qIndex = 0;
-                }
-
-                this.btns.forEach(b => { 
-                    b.style.background = 'rgba(255,255,255,0.05)';
-                    b.disabled = false; 
-                });
-
-                const q = this.questions[this.qIndex];
-                this.qText.textContent = q.q;
-                this.ball.textContent = SPORTS_THEMES[q.theme].icon;
-
-                const order = [0,1,2,3].sort(() => Math.random() - 0.5);
+                const q = questionBank[Math.floor(Math.random()*questionBank.length)];
+                this.currentQ = q;
+                this.el.querySelector('.q-text').textContent = q.q;
+                this.el.querySelector('.ball').textContent = q.theme;
                 this.btns.forEach((b, i) => {
-                    b.textContent = q.options[order[i]];
-                    b.dataset.realIdx = order[i];
+                    b.textContent = q.options[i];
+                    b.style.background = 'rgba(255,255,255,0.05)';
                 });
-
                 this.resetTimer();
             }
 
             resetTimer() {
                 clearInterval(this.timer);
-                this.timeLeft = 10;
+                let timeLeft = 10;
                 this.timer = setInterval(() => {
-                    this.timeLeft -= 0.1;
-                    this.timerFill.style.width = (this.timeLeft * 10) + '%';
-                    if(this.timeLeft <= 0) this.handleWrong(null);
+                    timeLeft -= 0.1;
+                    this.el.querySelector('.timer-fill').style.width = (timeLeft * 10) + '%';
+                    if(timeLeft <= 0) this.nextQuestion();
                 }, 100);
             }
 
             checkAnswer(btn) {
-                clearInterval(this.timer);
-                const q = this.questions[this.qIndex];
-                const isCorrect = parseInt(btn.dataset.realIdx) === q.answer;
-
-                this.questionsAttempted++;
-                this.qCountDisplay.textContent = this.questionsAttempted;
-
+                const isCorrect = parseInt(btn.dataset.idx) === this.currentQ.answer;
                 if(isCorrect) {
-                    SFX.play(800, 'sine', 0.2);
-                    btn.style.background = '#22c55e';
+                    SFX.play(600, 'sine', 0.2);
                     this.score += 100;
-                    this.scoreDisplay.textContent = this.score;
-                    setTimeout(() => { this.qIndex++; this.nextQuestion(); }, 500);
+                    this.el.querySelector('.score-val').textContent = this.score;
+                    btn.style.background = 'var(--primary)';
                 } else {
-                    this.handleWrong(btn);
+                    SFX.play(150, 'square', 0.3);
+                    btn.style.background = 'var(--danger)';
                 }
-            }
-
-            handleWrong(btn) {
-                SFX.play(100, 'square', 0.4);
-                if(btn) btn.style.background = '#ef4444';
-                
-                // Jika Mode Eliminasi, salah langsung tamat
-                if (selectedRuleMode === 'elim') {
-                    this.endGame();
-                    return;
-                }
-
-                setTimeout(() => { this.qIndex++; this.nextQuestion(); }, 700);
-            }
-
-            endGame() {
-                this.isAlive = false;
-                clearInterval(this.timer);
-                this.goScoreDisplay.textContent = this.score;
-                this.gameOverScreen.classList.add('active');
+                setTimeout(() => this.nextQuestion(), 400);
             }
         }
 
         function initGame(num) {
+            SFX.init();
             document.getElementById('main-menu').style.display = 'none';
             const gc = document.getElementById('game-container');
             gc.style.display = 'grid';
             gc.className = num === 1 ? 'mode-solo' : num === 2 ? 'mode-duel' : 'mode-squad';
-            gc.innerHTML = '';
             for(let i=1; i<=num; i++) new Player(i, gc);
         }
     </script>
