@@ -214,59 +214,126 @@
     </div>
 
     <script>
-        // Data pertanyaan tetap sama seperti versi sebelumnya
+        // BANK SOAL LENGKAP (102 PERTANYAAN)
         const questionBank = [
-            // BOLA VOLI (1-20)
-            { q: "Siapa penemu permainan bola voli?", options: ["James Naismith", "William G. Morgan", "George Hancock", "Duke of Beaufort"], answer: 1 },
-            { q: "Tahun berapa bola voli diciptakan?", options: ["1891", "1895", "1900", "1920"], answer: 1 },
-            { q: "Induk organisasi bola voli Indonesia adalah?", options: ["PSSI", "PBSI", "PBVSI", "PERBASI"], answer: 2 },
-            { q: "Berapa ukuran lapangan bola voli?", options: ["9x18 m", "10x20 m", "12x24 m", "15x28 m"], answer: 0 },
-            { q: "Posisi pemain nomor 1 dalam voli bertugas sebagai?", options: ["Smasher", "Tosser", "Libero", "Server"], answer: 3 },
-            { q: "Pukulan pembuka dalam permainan bola voli disebut?", options: ["Smash", "Service", "Passing", "Block"], answer: 1 },
-            { q: "Pukulan keras menukik ke lapangan lawan disebut?", options: ["Passing Atas", "Service Atas", "Smash", "Dig"], answer: 2 },
-            { q: "Berapa jumlah maksimal sentuhan bola tiap tim dalam voli?", options: ["2 kali", "3 kali", "4 kali", "5 kali"], answer: 1 },
-            { q: "Tinggi net bola voli putra adalah?", options: ["2.24 m", "2.34 m", "2.43 m", "2.44 m"], answer: 2 },
-            { q: "Tinggi net bola voli putri adalah?", options: ["2.24 m", "2.34 m", "2.43 m", "2.15 m"], answer: 0 },
-            { q: "Sistem poin dalam bola voli menggunakan sistem?", options: ["Break point", "Rally point", "Deuce point", "Change side"], answer: 1 },
-            { q: "Berapa poin kemenangan dalam satu set bola voli?", options: ["15", "21", "25", "30"], answer: 2 },
-            { q: "Pemain yang khusus bertugas bertahan dalam voli disebut?", options: ["Setter", "Libero", "Spiker", "Blocker"], answer: 1 },
-            { q: "Nama lain pengatur serangan dalam bola voli adalah?", options: ["Libero", "Tosser/Setter", "Smasher", "Server"], answer: 1 },
-            { q: "Gerakan membendung bola di depan net disebut?", options: ["Dig", "Service", "Blocking", "Passing"], answer: 2 },
-            { q: "Arah rotasi pemain dalam bola voli adalah?", options: ["Searah jarum jam", "Berlawanan jarum jam", "Maju-mundur", "Bebas"], answer: 0 },
-            { q: "Posisi pemain depan dalam voli adalah nomor?", options: ["1, 2, 3", "2, 3, 4", "4, 5, 6", "1, 6, 5"], answer: 1 },
-            { q: "Pelanggaran menyentuh net disebut?", options: ["Walking", "Holding", "Netting", "Double"], answer: 2 },
-            { q: "Berapa jumlah pemain bola voli di lapangan per tim?", options: ["5 orang", "6 orang", "7 orang", "11 orang"], answer: 1 },
-            { q: "Berat standar bola voli adalah?", options: ["200-220g", "260-280g", "300-350g", "400-500g"], answer: 1 },
-
-            // BELA DIRI & KESEHATAN
+            // PENCAK SILAT (1-12)
             { q: "Induk organisasi pencak silat di Indonesia adalah?", options: ["IPSI", "FORKI", "PELTI", "PSSI"], answer: 0 },
             { q: "Dalam pencak silat, sasaran utama serangan adalah?", options: ["Kepala", "Lengan", "Tungkai", "Dada/Togok"], answer: 3 },
             { q: "Gerakan dasar berpijak dalam pencak silat disebut?", options: ["Sikap Pasang", "Kuda-kuda", "Langkah", "Tangkisan"], answer: 1 },
+            { q: "Sikap siaga untuk melakukan pembelaan atau serangan disebut?", options: ["Sikap Pasang", "Kuda-kuda", "Pola Langkah", "Hindaran"], answer: 0 },
+            { q: "Tangkisan yang menggunakan lengan bawah disebut?", options: ["Tangkisan Dalam", "Tangkisan Atas", "Tangkisan Luar", "Semua Benar"], answer: 3 },
+            { q: "Tendangan 'T' dalam pencak silat menggunakan?", options: ["Punggung kaki", "Telapak kaki", "Pisau kaki", "Ujung kaki"], answer: 2 },
+            { q: "Istilah menghindar dengan memindahkan pijakan kaki disebut?", options: ["Egosan", "Kelitan", "Hindaran", "Tangkisan"], answer: 2 },
+            { q: "Warna pakaian resmi atlet pencak silat adalah?", options: ["Putih", "Merah", "Hitam", "Biru"], answer: 2 },
+            { q: "Teknik jatuhan dalam pencak silat biasanya diawali dengan?", options: ["Pukulan", "Tangkisan", "Sapuan/Tangkapan", "Tendangan"], answer: 2 },
+            { q: "Seni beladiri asli Indonesia adalah?", options: ["Karate", "Judo", "Pencak Silat", "Taekwondo"], answer: 2 },
+            { q: "Pelindung badan dalam tanding pencak silat disebut?", options: ["Body Protector", "Chest Guard", "Body Vest", "Pelindung"], answer: 0 },
+            { q: "Durasi satu babak dalam pertandingan pencak silat remaja adalah?", options: ["1 menit", "1.5 menit", "2 menit", "3 menit"], answer: 2 },
+
+            // KARATE (13-24)
             { q: "Negara asal olahraga bela diri Karate adalah?", options: ["Korea", "Tiongkok", "Jepang", "Thailand"], answer: 2 },
+            { q: "Induk organisasi karate di Indonesia adalah?", options: ["IPSI", "FORKI", "PELTI", "PBSI"], answer: 1 },
             { q: "Pakaian karate disebut dengan istilah?", options: ["Dobok", "Gi", "Karategi", "Kimono"], answer: 2 },
             { q: "Gerakan dasar atau jurus dalam karate disebut?", options: ["Kata", "Kumite", "Kihon", "Dojo"], answer: 0 },
+            { q: "Pertarungan atau duel dalam karate disebut?", options: ["Kata", "Kumite", "Kihon", "Randori"], answer: 1 },
+            { q: "Tempat latihan karate disebut?", options: ["Ring", "Court", "Dojo", "Stadion"], answer: 2 },
+            { q: "Tingkatan sabuk awal dalam karate adalah berwarna?", options: ["Kuning", "Putih", "Hijau", "Coklat"], answer: 1 },
+            { q: "Teknik pukulan dalam karate disebut?", options: ["Geri", "Uke", "Zuki", "Dachi"], answer: 2 },
+            { q: "Teknik tendangan dalam karate disebut?", options: ["Geri", "Uke", "Zuki", "Dachi"], answer: 0 },
+            { q: "Teknik tangkisan dalam karate disebut?", options: ["Geri", "Uke", "Zuki", "Dachi"], answer: 1 },
+            { q: "Sikap awal atau kuda-kuda dalam karate disebut?", options: ["Dachi", "Zuki", "Uke", "Kata"], answer: 0 },
+            { q: "Karatogi biasanya menggunakan sabuk berwarna apa untuk master?", options: ["Hitam", "Merah", "Putih", "Emas"], answer: 0 },
+
+            // RENANG (25-36)
+            { q: "Renang gaya dada sering disebut juga gaya?", options: ["Kupu-kupu", "Punggung", "Katak", "Bebas"], answer: 2 },
             { q: "Induk organisasi renang Indonesia adalah?", options: ["PRSI", "PBSI", "PASI", "PSSI"], answer: 0 },
             { q: "Posisi wajah saat renang gaya punggung adalah?", options: ["Menghadap air", "Menghadap ke atas", "Menyamping", "Tenggelam"], answer: 1 },
             { q: "Gaya renang yang paling cepat adalah gaya?", options: ["Dada", "Bebas", "Punggung", "Kupu-kupu"], answer: 1 },
-            { q: "Zat dalam rokok yang menyebabkan ketagihan adalah?", options: ["Tar", "Nikotin", "Karbon monoksida", "Oksigen"], answer: 1 },
-            { q: "PHBS singkatan dari?", options: ["Pola Hidup Bersih Sehat", "Perilaku Hidup Bersih Sehat", "Pola Hidup Bersama Sehat", "Peraturan Hidup Bersih Sehat"], answer: 1 },
-            { q: "Penyakit yang disebabkan oleh gigitan nyamuk Aedes Aegypti adalah?", options: ["Malaria", "DBD", "Tifus", "Flu Burung"], answer: 1 },
+            { q: "Pengambilan napas gaya bebas dilakukan dengan?", options: ["Menoleh ke samping", "Mengangkat kepala", "Menengadah", "Menahan napas"], answer: 0 },
+            { q: "Start renang gaya punggung dilakukan di?", options: ["Atas balok start", "Dalam air", "Pinggir kolam", "Luar area"], answer: 1 },
+            { q: "Panjang kolam renang lintasan panjang standar olympic?", options: ["25 m", "50 m", "100 m", "75 m"], answer: 1 },
+            { q: "Kacamata renang berfungsi untuk?", options: ["Gaya", "Melindungi mata dari kaporit", "Melihat ikan", "Menambah kecepatan"], answer: 1 },
+            { q: "Berenang dengan posisi dada menghadap permukaan air disebut gaya?", options: ["Punggung", "Dada", "Samping", "Kupu-kupu"], answer: 1 },
+            { q: "Gerakan kaki pada gaya dada adalah?", options: ["Naik turun", "Menendang melingkar", "Seperti gunting", "Diam saja"], answer: 1 },
+            { q: "Renang yang mengandalkan kekuatan bahu dan pinggul adalah gaya?", options: ["Dada", "Bebas", "Punggung", "Kupu-kupu"], answer: 3 },
+            { q: "Urutan gaya dalam renang estafet gaya ganti adalah?", options: ["Bebas-Dada-Punggung-Kupu", "Punggung-Dada-Kupu-Bebas", "Kupu-Punggung-Dada-Bebas", "Dada-Bebas-Kupu-Punggung"], answer: 1 },
 
-            // Tambahkan pertanyaan lain hingga 100 secara dinamis jika diperlukan
-            // (Untuk efisiensi, list ini diperpendek dalam tampilan preview tetapi data tetap lengkap)
-            { q: "Siapa penemu permainan bola basket?", options: ["William Morgan", "James Naismith", "George Hancock", "Michael Jordan"], answer: 1 },
-            { q: "Berapa jumlah pemain basket per tim di lapangan?", options: ["4 orang", "5 orang", "6 orang", "11 orang"], answer: 1 },
-            { q: "Teknik menyundul bola disebut?", options: ["Heading", "Dribbling", "Stopping", "Passing"], answer: 0 },
-            { q: "Induk organisasi sepak bola Indonesia adalah?", options: ["PSSI", "PBVSI", "PERBASI", "PBSI"], answer: 0 },
-            { q: "Kartu merah dalam sepak bola artinya?", options: ["Peringatan", "Keluar lapangan", "Ganti pemain", "Tendangan bebas"], answer: 1 },
-            { q: "Alat pemukul dalam tenis meja disebut?", options: ["Raket", "Bet", "Stik", "Glove"], answer: 1 },
-            { q: "Tumpuan lompat jauh menggunakan berapa kaki?", options: ["1 kaki", "2 kaki", "Tangan", "Bebas"], answer: 0 },
-            { q: "Latihan sit up bertujuan melatih otot?", options: ["Lengan", "Perut", "Paha", "Leher"], answer: 1 },
-            { q: "Vitamin C banyak terdapat pada buah?", options: ["Pepaya", "Jeruk", "Pisang", "Salak"], answer: 1 },
-            { q: "Gerakan pemanasan disebut juga?", options: ["Cooling down", "Warming up", "Stretching", "Jogging"], answer: 1 }
+            // BUDAYA HIDUP SEHAT & KESEHATAN (37-55)
+            { q: "Berapa jam waktu tidur ideal bagi remaja?", options: ["4-5 jam", "6-7 jam", "8-9 jam", "10-12 jam"], answer: 2 },
+            { q: "Zat dalam rokok yang menyebabkan ketagihan adalah?", options: ["Tar", "Nikotin", "Karbon monoksida", "Oksigen"], answer: 1 },
+            { q: "Makanan 4 sehat 5 sempurna mencakup, kecuali?", options: ["Nasi", "Lauk pauk", "Susu", "Minuman bersoda"], answer: 3 },
+            { q: "PHBS singkatan dari?", options: ["Pola Hidup Bersih Sehat", "Perilaku Hidup Bersih Sehat", "Pola Hidup Bersama Sehat", "Peraturan Hidup Bersih Sehat"], answer: 1 },
+            { q: "Penyakit yang disebabkan oleh nyamuk Aedes Aegypti adalah?", options: ["Malaria", "DBD", "Tifus", "Flu Burung"], answer: 1 },
+            { q: "Vitamin yang baik untuk kesehatan mata adalah?", options: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"], answer: 0 },
+            { q: "Kekurangan vitamin D dapat menyebabkan gangguan pada?", options: ["Mata", "Kulit", "Tulang", "Gigi"], answer: 2 },
+            { q: "Cuci tangan sebaiknya menggunakan?", options: ["Air saja", "Handuk", "Sabun dan air mengalir", "Alkohol saja"], answer: 2 },
+            { q: "Fungsi utama karbohidrat bagi tubuh adalah?", options: ["Zat pembangun", "Zat pengatur", "Sumber energi", "Cadangan lemak"], answer: 2 },
+            { q: "Penyakit AIDS menyerang sistem?", options: ["Pencernaan", "Pernapasan", "Kekebalan tubuh", "Syaraf"], answer: 2 },
+            { q: "BMI (Body Mass Index) digunakan untuk mengukur?", options: ["Tinggi badan", "Berat badan ideal", "Detak jantung", "Kapasitas paru"], answer: 1 },
+            { q: "Kandungan kimiawi dalam kopi adalah?", options: ["Nikotin", "Kafein", "Tar", "Alkohol"], answer: 1 },
+            { q: "Narkotika golongan I contohnya adalah?", options: ["Ganja", "Kodein", "Morfin", "Sabu"], answer: 0 },
+            { q: "Tujuan utama istirahat adalah?", options: ["Biar tidak belajar", "Memulihkan kesegaran tubuh", "Menambah berat badan", "Supaya mimpi"], answer: 1 },
+            { q: "Contoh penyakit tidak menular adalah?", options: ["Flu", "TBC", "Diabetes", "Cacar"], answer: 2 },
+            { q: "Berikut unsur zat gizi mikro adalah?", options: ["Karbohidrat", "Protein", "Vitamin", "Lemak"], answer: 2 },
+            { q: "Pencegahan pergaulan bebas dilakukan melalui?", options: ["Nonton film", "Pendidikan agama & keluarga", "Main game", "Banyak uang"], answer: 1 },
+            { q: "Dampak negatif alkohol bagi hati adalah?", options: ["Kanker paru", "Sirosis hati", "Asma", "Stroke"], answer: 1 },
+            { q: "Tanda fisik remaja mengalami pubertas putra adalah?", options: ["Pinggul melebar", "Suara membesar/jakun", "Tinggi berkurang", "Kulit keriput"], answer: 1 },
+
+            // BOLA VOLI (56-70)
+            { q: "Siapa penemu permainan bola voli?", options: ["James Naismith", "William G. Morgan", "George Hancock", "Duke of Beaufort"], answer: 1 },
+            { q: "Tahun berapa bola voli diciptakan?", options: ["1891", "1895", "1900", "1920"], answer: 1 },
+            { q: "Berapa ukuran lapangan bola voli?", options: ["9x18 m", "10x20 m", "12x24 m", "15x28 m"], answer: 0 },
+            { q: "Pukulan pembuka dalam permainan bola voli disebut?", options: ["Smash", "Service", "Passing", "Block"], answer: 1 },
+            { q: "Tinggi net bola voli putra adalah?", options: ["2.24 m", "2.34 m", "2.43 m", "2.44 m"], answer: 2 },
+            { q: "Sistem poin dalam bola voli menggunakan sistem?", options: ["Break point", "Rally point", "Deuce point", "Change side"], answer: 1 },
+            { q: "Pemain yang khusus bertugas bertahan dalam voli disebut?", options: ["Setter", "Libero", "Spiker", "Blocker"], answer: 1 },
+            { q: "Nama lain pengatur serangan dalam bola voli adalah?", options: ["Libero", "Tosser/Setter", "Smasher", "Server"], answer: 1 },
+            { q: "Gerakan membendung bola di depan net disebut?", options: ["Dig", "Service", "Blocking", "Passing"], answer: 2 },
+            { q: "Posisi pemain depan dalam voli adalah nomor?", options: ["1, 2, 3", "2, 3, 4", "4, 5, 6", "1, 6, 5"], answer: 1 },
+            { q: "Berapa jumlah pemain bola voli di lapangan per tim?", options: ["5 orang", "6 orang", "7 orang", "11 orang"], answer: 1 },
+            { q: "Kesalahan memukul bola dua kali berturut-turut disebut?", options: ["Netting", "Holding", "Double hit", "Walking"], answer: 2 },
+            { q: "Arah servis yang baik adalah?", options: ["Ke luar lapangan", "Ke arah net", "Ke tempat kosong lawan", "Ke arah wasit"], answer: 2 },
+            { q: "Berapa sentuhan maksimal setiap tim?", options: ["2", "3", "4", "5"], answer: 1 },
+            { q: "Skor akhir deuce pada voli adalah bila poin?", options: ["20-20", "24-24", "25-25", "15-15"], answer: 1 },
+
+            // SEPAK BOLA (71-85)
+            { q: "Lama waktu normal pertandingan sepak bola?", options: ["2x30 menit", "2x45 menit", "2x15 menit", "4x10 menit"], answer: 1 },
+            { q: "Hukuman tendangan dari titik 11 meter disebut?", options: ["Corner kick", "Free kick", "Penalty kick", "Goal kick"], answer: 2 },
+            { q: "Siapa pemain yang boleh memegang bola dengan tangan?", options: ["Striker", "Bek", "Gelandang", "Kiper"], answer: 3 },
+            { q: "Istilah offside terjadi bila?", options: ["Bola keluar", "Pemain lebih depan dari bek lawan", "Kiper kena kartu", "Gol tangan"], answer: 1 },
+            { q: "Induk organisasi sepak bola dunia adalah?", options: ["FIBA", "FIFA", "BWF", "FIVB"], answer: 1 },
+            { q: "Tendangan sudut disebut juga dengan?", options: ["Goal kick", "Corner kick", "Free kick", "Throw in"], answer: 1 },
+            { q: "Kartu merah diberikan jika pemain?", options: ["Peringatan ringan", "Melakukan pelanggaran berat", "Sengaja gol", "Senang"], answer: 1 },
+            { q: "Jumlah pemain sepak bola dalam satu tim adalah?", options: ["6 orang", "11 orang", "5 orang", "12 orang"], answer: 1 },
+            { q: "Gerakan menendang bola ke gawang disebut?", options: ["Dribbling", "Passing", "Shooting", "Stopping"], answer: 2 },
+            { q: "Wasit dalam sepak bola berjumlah?", options: ["1 utama, 2 hakim garis", "2 utama", "3 utama", "1 saja"], answer: 0 },
+            { q: "Ukuran lebar gawang sepak bola adalah?", options: ["7.32 m", "5.32 m", "2.44 m", "8.32 m"], answer: 0 },
+            { q: "Induk sepak bola Indonesia adalah?", options: ["PSSI", "PBSI", "PASI", "PBVSI"], answer: 0 },
+            { q: "Teknik menghentikan bola dengan kaki disebut?", options: ["Dribbling", "Passing", "Stopping", "Heading"], answer: 2 },
+            { q: "Pemain sepak bola yang bertugas mencetak gol adalah?", options: ["Kiper", "Bek", "Gelandang", "Striker"], answer: 3 },
+            { q: "Awal dimulainya pertandingan sepak bola disebut?", options: ["Corner", "Kick off", "Finish", "Free kick"], answer: 1 },
+
+            // BOLA BASKET & ATLETIK (86-102)
+            { q: "Siapa penemu permainan bola basket?", options: ["James Naismith", "William Morgan", "George Hancock", "Michael Jordan"], answer: 0 },
+            { q: "Jumlah pemain basket per tim adalah?", options: ["4 orang", "5 orang", "6 orang", "11 orang"], answer: 1 },
+            { q: "Gerakan berputar dengan satu kaki sebagai poros disebut?", options: ["Dribble", "Pivot", "Lay up", "Rebound"], answer: 1 },
+            { q: "Tembakan sambil melayang dalam basket disebut?", options: ["Slam dunk", "Jump shot", "Lay up shot", "Free throw"], answer: 2 },
+            { q: "Durasi permainan basket internasional (FIBA) adalah?", options: ["4x10 menit", "4x12 menit", "2x20 menit", "2x45 menit"], answer: 0 },
+            { q: "Pelanggaran membawa bola lebih dari 2 langkah tanpa dribble?", options: ["Foul", "Traveling", "Double", "Walking"], answer: 1 },
+            { q: "Induk organisasi basket Indonesia?", options: ["PERBASI", "PSSI", "PBSI", "PBVSI"], answer: 0 },
+            { q: "Start yang digunakan untuk lari jarak pendek?", options: ["Berdiri", "Melayang", "Jongkok", "Duduk"], answer: 2 },
+            { q: "Nomor lari jarak pendek adalah?", options: ["100m, 200m, 400m", "800m, 1500m", "5000m", "Maraton"], answer: 0 },
+            { q: "Alat yang dibawa dalam lari estafet adalah?", options: ["Bola", "Tongkat", "Tali", "Topi"], answer: 1 },
+            { q: "Induk organisasi atletik Indonesia?", options: ["PASI", "PSSI", "PRSI", "PBSI"], answer: 0 },
+            { q: "Lompat jauh menggunakan tumpuan berapa kaki?", options: ["1 kaki", "2 kaki", "Tangan", "Kepala"], answer: 0 },
+            { q: "Gaya dalam lompat jauh adalah, kecuali?", options: ["Gaya menggantung", "Gaya jongkok", "Gaya bebas", "Gaya berjalan di udara"], answer: 2 },
+            { q: "Push up melatih otot?", options: ["Perut", "Lengan & dada", "Paha", "Leher"], answer: 1 },
+            { q: "Sit up melatih otot?", options: ["Perut", "Lengan", "Punggung", "Betis"], answer: 0 },
+            { q: "Kemampuan sendi melakukan gerakan luas disebut?", options: ["Kekuatan", "Kecepatan", "Kelenturan", "Keseimbangan"], answer: 2 },
+            { q: "Back up melatih otot?", options: ["Perut", "Punggung", "Lengan", "Tangan"], answer: 1 }
         ];
 
-        // Logic Game
+        // LOGIC GAME TETAP SAMA (HANYA BANK SOAL YANG BERUBAH)
         let selectedRuleMode = 'score';
         let audioEnabled = false;
         let gameActive = true;
@@ -440,12 +507,14 @@
 
             refreshHUD() {
                 const statsArea = this.el.querySelector('.stats-area');
+                if (!statsArea) return;
                 if (selectedRuleMode === 'score') {
                     statsArea.textContent = `SOAL: ${Math.min(this.questionsCount, SCORE_MODE_MAX)}/${SCORE_MODE_MAX}`;
                 } else {
                     statsArea.textContent = `NYAWA: ${'❤️'.repeat(Math.max(0, this.lives))}`;
                 }
-                this.el.querySelector('.game-content > div:last-child').textContent = `SKOR: ${this.score}`;
+                const scoreDiv = this.el.querySelector('.game-content > div:last-child');
+                if (scoreDiv) scoreDiv.textContent = `SKOR: ${this.score}`;
             }
 
             finish() {
